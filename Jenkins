@@ -1,0 +1,31 @@
+pipeline {
+  agent { label 'linux' }
+  options {
+    buildDiscarder(logRotator(numToKeepStr: '5'))
+  }
+  environment {
+    DOCKERHUB_CREDENTIALS = credentials('barttho-dockerhub')
+  }
+  stages {
+    stage('Build') {
+      steps {
+        sh './scripts/build.sh'
+      }
+    }
+    stage('Login') {
+      steps {
+        sh './scripts/login.sh'
+      }
+    }
+    stage('Push') {
+      steps {
+        sh './scripts/push.sh'
+      }
+    }
+  }
+  post {
+    always {
+      sh './scripts/logout.sh'
+    }
+  }
+}
