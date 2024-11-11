@@ -9,7 +9,7 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 'docker build -t barttho/python_script:1.01.1 .'
+        sh 'docker build -t barttho/python_script:latest .'
       }
     }
     stage('Login') {
@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push barttho/python_script:1.01.1'
+        sh 'docker push barttho/python_script:latest'
       }
     }
     stage('docker_run') {
