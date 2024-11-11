@@ -24,7 +24,7 @@ pipeline {
     }
     stage('docker_run') {
       steps {
-        sh 'docker run -d --name dummy1 test:1.01.1'
+        sh 'docker run -d --name dummy1 barttho/python_script'
       }
     }
     stage('docker_cp') {
