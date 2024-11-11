@@ -9,17 +9,17 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh './scripts/build.sh'
+        sh 'docker build -t barttho/python_script:1.01.1 .'
       }
     }
     stage('Login') {
       steps {
-        sh './scripts/login.sh'
+        sh 'echo $DOCKERHUB_CREDENTIALS_PSW | docker login -u $DOCKERHUB_CREDENTIALS_USR --password-stdin'
       }
     }
     stage('Push') {
       steps {
-        sh './scripts/push.sh'
+        sh 'docker push barttho/python_script:1.01.1'
       }
     }
     stage('docker_run') {
@@ -40,7 +40,7 @@ pipeline {
   }
   post {
     always {
-      sh './scripts/logout.sh'
+      sh 'docker logout'
     }
   }
 }
