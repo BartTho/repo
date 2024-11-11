@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-Aatal = 2
+Aatal = 10
 
 x = np.arange(0, Aatal*np.pi, 0.1)
 y = np.sin(x)
