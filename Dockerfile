@@ -8,8 +8,9 @@ LABEL maintainer="bart.thonissen@thomasmore.be"
 # Voeg mijn eigen webpagina toe
 WORKDIR /var/www/html
 
-COPY index.html index.html
-COPY DevOps.png DevOps.png
+COPY index.html .
+COPY DevOps.png .
+COPY styles.css .
 
 #we voeren de updates uit en installeren nginx
 RUN apt-get update && apt-get upgrade -y
