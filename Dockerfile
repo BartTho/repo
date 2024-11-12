@@ -6,12 +6,7 @@ LABEL Maintainer="bart.thonissen@thomasmore.be"
 # i have chosen /usr/app
 WORKDIR /app
 COPY /code/graffiek.py .
-COPY /code/ .
+COPY /code/requirements.txt .
 
 RUN pip install -r requirements.txt
 RUN python /app/graffiek.py
-#CMD instruction should be used to run the software
-#contained by your image, along with any arguments.
-#ENTRYPOINT ["tail"]
-#CMD ["python", "/apt/graffiek.py"]
-#CMD ["tail", "-f", "/dev/null"]
