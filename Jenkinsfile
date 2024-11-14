@@ -13,6 +13,5 @@ pipeline {
         sh 'docker cp dummy1:/app/sinus.png . | True'
       }
     }                 
-    }
   }
 }
