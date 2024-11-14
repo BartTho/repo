@@ -8,10 +8,5 @@ pipeline {
          '''
       }
     }
-    stage('docker_cp') {
-      steps {
-        sh 'docker cp dummy1:/app/sinus.png .'
-      }
-    }
   }
 }
