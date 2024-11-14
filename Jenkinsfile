@@ -5,7 +5,6 @@ pipeline {
       steps {
         sh '''
            python --version
-           python /app/graffiek.py
          '''
       }
     }
