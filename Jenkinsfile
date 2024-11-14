@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Ansible List') {
             steps {
-                ansibleAdhoc(all --list-hosts)
+                ansibleAdhoc('all --list-hosts')
                 }
         }        
         stage('Ansible Test'){
