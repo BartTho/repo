@@ -12,6 +12,10 @@ pipeline {
                 ansibleAdhoc('all --list-hosts')
                 }
         }        
-
+        stage('Ansible Test'){
+            step{
+                ansiblePlaybook installation: 'Ansible2.16', inventory: '/', playbook: '/', vaultTmpPath: ''
+            }
+        }
     }
 }
