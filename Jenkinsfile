@@ -6,7 +6,13 @@ pipeline {
         sh '''
            python --version
          '''
+      }  
+    }    
+    stage('docker_cp') {
+      steps {
+        sh 'docker cp dummy1:/app/sinus.png . | True'
       }
+    }                 
     }
   }
 }
