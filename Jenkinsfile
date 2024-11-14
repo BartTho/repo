@@ -7,7 +7,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
-        stage('Hello') {
+        stage('Ansible List') {
             steps {
                 ansibleAdhoc('all --list-hosts')
                 }
