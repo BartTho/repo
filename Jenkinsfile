@@ -6,6 +6,7 @@ pipeline {
         sh '''
            python --version
            python /app/graffiek.py
+         '''
       }
     }
     stage('docker_cp') {
