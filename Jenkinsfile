@@ -3,7 +3,9 @@ pipeline {
   stages {
     stage('Build') {
       steps {
-        sh 
+        sh '''
+           python --version
+           python /app/graffiek.py
       }
     }
     stage('docker_cp') {
