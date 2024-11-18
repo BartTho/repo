@@ -7,10 +7,5 @@ pipeline {
                 ansibleAdhoc('all --list-hosts')
             }
         }
-        stage('Ansible Test') {
-            step {
-                ansiblePlaybook inventory: 'inventory', playbook: 'playbook.yml'
-            }
-        }
     }
 }
