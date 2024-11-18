@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Ansible Update Servers') {
             steps {
-                ansiblePlaybook inventory: 'inventory', extras: 'ansible_sudo_pass=Top.Secret', playbook: 'playbook.yml'
+                ansiblePlaybook inventory: 'inventory', extras: '--extra-vars ansible_sudo_pass=Top.Secret', playbook: 'playbook.yml'
             }
         }        
     }
