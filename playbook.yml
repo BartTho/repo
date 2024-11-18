@@ -28,7 +28,7 @@
       when: ansible_distribution == "Ubuntu"
 
   tasks:
-    - name: nmap en whatweb installeren op al onze servers.
+    - name: nmap installeren op al onze servers.
       ansible.builtin.package:
         name:
           - nmap
