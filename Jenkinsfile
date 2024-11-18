@@ -7,6 +7,5 @@ pipeline {
                 ansiblePlaybook inventory: 'inventory', playbook: 'playbook.yml'
             }
         }
-        }
     }
 }
