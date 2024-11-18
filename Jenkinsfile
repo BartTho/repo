@@ -4,8 +4,12 @@ pipeline {
     stages {
         stage('Ansible List') {
             steps {
-                ansibleAdhoc('all --list-hosts')
+                ansibleAdhoc inventory: 'inventory', extras: '--list-hosts'
             }
+            step {
+                ansiblePlaybook inventory: 'inventory', playbook: 'playbook.yml'
+            }
+        }
         }
     }
 }
