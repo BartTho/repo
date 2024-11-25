@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Verwijderen van de container'){
       steps {
-        sh 'docker ps -a | grep "dummy" | xargs docker rm
+        sh 'docker ps -a | grep "dummy" | xargs docker rm'
       }
     }
         stage('Build') {
