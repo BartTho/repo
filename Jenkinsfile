@@ -10,16 +10,12 @@ pipeline {
     } 
     stage('Stoppen van de container') {
       steps {
-        sh 'set +e'
-        sh 'docker container stop dummy1'
-        sh 'set -e'
+        sh 'docker ps --filter name=dummy* --filter status=running -aq | xargs docker stop'
       }
     }
     stage('Verwijderen van de container'){
       steps {
-        sh 'set +e'
-        sh 'docker container rm dummy1'
-        sh 'set -e'
+        sh 'docker ps -a | grep "dummy" | xargs docker rm
       }
     }
         stage('Build') {
