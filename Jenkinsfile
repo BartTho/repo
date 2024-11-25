@@ -7,6 +7,7 @@ pipeline {
            python --version
          '''
       }
+    }
     stage('Build') {
       steps {
         sh 'docker build -t barttho/python_script:latest .'
@@ -23,5 +24,4 @@ pipeline {
       }
     }                 
   }
-}
 }
