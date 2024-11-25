@@ -10,12 +10,16 @@ pipeline {
     } 
     stage('Stoppen van de container') {
       steps {
+        sh 'set +e'
         sh 'docker container stop dummy1 || true'
+        sh 'set -e'
       }
     }
     stage('Verwijderen van de container'){
       steps {
+        sh 'set +e'
         sh 'docker container rm dummy1 || true'
+        sh 'set -e'
       }
     }
         stage('Build') {
